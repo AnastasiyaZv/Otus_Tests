@@ -1,3 +1,5 @@
+import factory.BrowserMode;
+import factory.WebDriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,9 +22,7 @@ public class EnterTextInField {
 
     @BeforeEach
     public void webDriverStart() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        driver = new WebDriverFactory().getDriver(BrowserMode.HEADLESS);
         String baseUrl = System.getProperty("base.url");
         driver.get(baseUrl);
     }

@@ -1,3 +1,5 @@
+import factory.BrowserMode;
+import factory.WebDriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,9 +21,7 @@ public class OpenModalWindow {
 
     @BeforeEach
     public void webDriverStart() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--kiosk");
-        driver = new ChromeDriver(options);
+        driver = new WebDriverFactory().getDriver(BrowserMode.KIOSK);
         String baseUrl = System.getProperty("base.url");
         driver.get(baseUrl);
     }

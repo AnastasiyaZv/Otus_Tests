@@ -4,6 +4,8 @@
 //В поле динамическое сообщение (на зеленом фоне) появится сообщение в
 // формате: «Форма отправлена с именем: фыв и email: asdf@sdfg.rt».
 
+import factory.BrowserMode;
+import factory.WebDriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,9 +25,7 @@ public class SendForm {
 
     @BeforeEach
     public void webDriverStart() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-fullscreen");
-        driver = new ChromeDriver(options);
+        driver = new WebDriverFactory().getDriver(BrowserMode.FULLSCREEN);
         String baseUrl = System.getProperty("base.url");
         driver.get(baseUrl);
     }
