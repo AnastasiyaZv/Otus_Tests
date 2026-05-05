@@ -7,11 +7,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDriverFactory {
 
-    public WebDriver getDriver(BrowserMode mode){
+    public WebDriver getDriver(BrowserMode mode) {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 
-        switch (mode){
+        switch (mode) {
             case KIOSK -> {
                 options.addArguments("--kiosk");
                 break;
