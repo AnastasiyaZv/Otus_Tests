@@ -1,4 +1,4 @@
-package factory;
+package ru.otus.factory;
 
 public enum BrowserMode {
     KIOSK,
