@@ -37,7 +37,7 @@ public class MainPage extends AbsBasePage{
     private WebElement messageDynamicForm;
 
     public MainPage(WebDriver driver) {
-        super(driver);
+        super(driver, "");
     }
 
     public MainPage enterTextInput(String text){

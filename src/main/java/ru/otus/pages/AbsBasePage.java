@@ -9,14 +9,16 @@ public abstract class AbsBasePage {
 
     protected WebDriver driver;
     private String baseUrl = System.getProperty("base.url");
+    private String path;
 
-    public AbsBasePage(WebDriver driver){
+    public AbsBasePage(WebDriver driver, String path){
         this.driver = driver;
+        this.path = path;
         PageFactory.initElements(driver, this);
     }
 
     public void open(){
-        driver.get(baseUrl);
+        driver.get(baseUrl+path);
     }
 }
 
